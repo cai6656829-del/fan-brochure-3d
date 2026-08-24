@@ -1,0 +1,1 @@
+Compiled images for GitHub Pages.
