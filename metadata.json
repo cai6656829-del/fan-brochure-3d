@@ -1,0 +1,6 @@
+{
+  "name": "Fold Studio 3D Brochure",
+  "description": "Interactive 3D accordion fold brochure showcase with 360-degree orbit rotation, accordion folding physics, and click-to-focus high-definition design views.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

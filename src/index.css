@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    -webkit-user-drag: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+
+  body {
+    background-color: #08090C;
+    color: #F0F4F8;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    overflow: hidden;
+  }
+
+  img, svg, canvas {
+    pointer-events: none;
+    -webkit-user-drag: none !important;
+  }
+}
+
+/* Atmospheric Black to Dark Grey Studio Gradient */
+.bg-dark-gradient {
+  background: radial-gradient(ellipse at 50% 28%, #262930 0%, #17191E 38%, #0D0E12 70%, #050608 100%);
+}
+
+/* Liquid Crystal / Frosted Glass Skeuomorphic Pill & Panel Styles (Monochrome / Silver-Gray) */
+.glass-panel {
+  background: linear-gradient(180deg, rgba(38, 42, 48, 0.78) 0%, rgba(18, 20, 24, 0.88) 100%);
+  backdrop-filter: blur(32px) saturate(160%);
+  -webkit-backdrop-filter: blur(32px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.85),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Liquid Glass Capsule Pill Button (Monochrome Neutral Gray) */
+.glass-crystal-btn {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(200, 200, 205, 0.05) 50%, rgba(255, 255, 255, 0.10) 100%);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.35),
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1.5px 2px 0 rgba(255, 255, 255, 0.2);
+  color: #E5E7EB;
+  border-radius: 9999px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-crystal-btn:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26) 0%, rgba(220, 220, 225, 0.09) 50%, rgba(255, 255, 255, 0.18) 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.45),
+    inset 0 2px 2px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 2px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-0.5px);
+  color: #FFFFFF;
+}
+
+.glass-crystal-btn:active {
+  transform: scale(0.96);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(200, 200, 205, 0.02) 100%);
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Primary / Active Liquid Glass Pill (Monochrome Silver-Gray Frosted Glass) */
+.glass-crystal-primary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(180, 185, 195, 0.18) 50%, rgba(240, 242, 248, 0.25) 100%);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.45),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 2px 0 rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-crystal-primary:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(210, 215, 225, 0.25) 50%, rgba(255, 255, 255, 0.34) 100%);
+  border-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    0 8px 26px rgba(0, 0, 0, 0.55),
+    inset 0 2px 2.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 2.5px 0 rgba(255, 255, 255, 0.45);
+  transform: translateY(-0.5px);
+}
+
+.glass-crystal-primary:active {
+  transform: scale(0.96);
+}
+
+/* Anti-Print Protection */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
