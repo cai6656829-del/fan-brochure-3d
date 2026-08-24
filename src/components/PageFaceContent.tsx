@@ -94,6 +94,19 @@ interface PageFaceContentProps {
 export function PageFaceContent({ page, isHighRes = false, onSelect }: PageFaceContentProps) {
   // If user uploaded a custom page image/artwork or has a static default image, render the design directly
   const displayImage = page.customImageUrl || page.imageUrl;
+
+  const getFullImageUrl = (pathStr: string) => {
+    if (!pathStr) return "";
+    if (pathStr.startsWith("data:") || pathStr.startsWith("blob:") || pathStr.startsWith("http")) {
+      return pathStr;
+    }
+    const meta = import.meta as any;
+    const base = meta.env?.BASE_URL || "/";
+    const cleanPath = pathStr.startsWith("/") ? pathStr.slice(1) : pathStr;
+    const cleanBase = base.endsWith("/") ? base : `${base}/`;
+    return `${cleanBase}${cleanPath}`;
+  };
+
   if (displayImage) {
     return (
       <div
@@ -104,7 +117,7 @@ export function PageFaceContent({ page, isHighRes = false, onSelect }: PageFaceC
         onClick={onSelect}
       >
         <img
-          src={displayImage}
+          src={getFullImageUrl(displayImage)}
           alt={page.title || page.code}
           className="w-full h-full object-cover pointer-events-none select-none"
           draggable={false}
